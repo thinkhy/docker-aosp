@@ -73,8 +73,7 @@ command="$1"
 
 case "$command" in
   create-mirror)
-    #source="https://android.googlesource.com/mirror/manifest"
-    source="https://aosp.tuna.tsinghua.edu.cn/platform/manifest"
+    source="https://android.googlesource.com/mirror/manifest"
     shift
     cd "$MIRROR_PATH"
     test -d .repo || repo init -u "$source" --mirror
@@ -82,13 +81,11 @@ case "$command" in
     ;;
   checkout-branch)
     if [ "$2" == "--no-mirror" ]; then
-      #manifest="https://android.googlesource.com/platform/manifest"
-      manifest="https://aosp.tuna.tsinghua.edu.cn/platform/manifest"
+      manifest="https://android.googlesource.com/platform/manifest"
       shift
     else
       manifest="$MIRROR_PATH/platform/manifest.git"
     fi
-    manifest="https://aosp.tuna.tsinghua.edu.cn/platform/manifest"
     branch="$2"
     shift; shift
     cd "$AOSP_PATH"
